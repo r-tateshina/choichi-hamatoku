@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/common.css">
+  <title>ちょうど1年前の今日のはまとく | 濱特新聞社</title>
+</head>
+<body style="background-color: #5a1e7f">
+
+  <div class="container-sm">
+    <div class="text-center m-5"><img class="img-fluid" src="/static/logo.png" style="max-height: 10rem">
+      <div class="reiji-button"><img class="img-fluid" src="/static/about.png" data-bs-toggle="modal" data-bs-target="#aboutBox" style="margin:2rem 0rem; width:100%; max-width:640px;"></div>
+      <div class="modal fade" id="aboutBox" tabindex="-1" aria-labelledby="aboutBoxLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="aboutBoxLabel">🏖このサイトについて</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img class="img-fluid" src="/static/reiji.jpg" style="max-height: 15rem; margin-bottom: 1rem;">
+              <p style="text-align: left;">今日と同じように、1年前の今日も、はまとく氏は様々なツイートをしていました。「ちょうど1年前の今日のはまとく」を使えば、1年前の出来事と現在との差分を取ることができます。そしてその差分は、未来についての深い示唆を与えてくれます。</p><img class="img-fluid" src="/static/reiwa.jpg" style="max-height: 15rem; margin-bottom: 1rem;">
+              <p style="text-align: left;">1年前のツイートを振り返って現在と比較すると、未来に対しての具体的な方策や前向きな考えが生まれてきます。世の中の出来事を点ではなく線で見ることができる、この「ちょうど1年前の今日のはまとく」が、あなたにとって未来を考える手がかりになれば幸いです。</p>
+              <p style="text-align: left;"><small>元ネタは大日本印刷株式会社の<a href="https://dnp.choichi.news/" target="_blank">「ちょうど1年前の今日のニュース」</a>ですが、本Webサイトは大日本印刷株式会社さまとは一切関係ありません。</small></p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      {% for tweet in tweets %}
+      <blockquote class="twitter-tweet" data-lang="ja" style="margin-left: auto; margin-right: auto;">
+        <div class="d-flex justify-content-center">
+          <div class="spinner-border m-5 text-light" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div><a href="{{ tweet }}?ref_src=twsrc%5Etfw"></a>
+      </blockquote>
+      {% endfor %}
+    </div>
+    <footer class="text-center text-light m-5">(c)2022 THE HAMATOKU SHIMBUN</footer>
+  </div>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
