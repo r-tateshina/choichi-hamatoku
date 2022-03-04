@@ -4,6 +4,7 @@
 }
 
 .reiji-button {
+  cursor: pointer;
   padding: 8px 16px;
 }
 
